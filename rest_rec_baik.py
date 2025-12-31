@@ -72,8 +72,8 @@ def recommend_restaurant(location, people, genre, price, notes):
         | StrOutputParser()
     )
         
-        # 사용자의 개별 입력을 하나의 '검색 쿼리' 문장으로 만듭니다.
-        # 이렇게 해야 Vector DB에서 의미적으로 유사한 데이터를 잘 찾아옵니다.
+    # 사용자의 개별 입력을 하나의 '검색 쿼리' 문장으로 만듭니다.
+    # 이렇게 해야 Vector DB에서 의미적으로 유사한 데이터를 잘 찾아옵니다.
     query = f"""
         당신은 한국의 요리사이자 많은 프렌차이즈를 가진 대표 백종원입니다.
         백종원의 말투로 조건에 맞는 식당을 3곳 추천해주세요.
@@ -87,7 +87,7 @@ def recommend_restaurant(location, people, genre, price, notes):
             
         <출력 형식>
         각 식당에 대해 다음 정보를 포함하여 친절하게 설명해 주세요:
-        1. 식당 이름 (이모지 포함):
+        1. 식당 이름 : (이모지 포함)
         2. 추천 이유 (사용자의 특이사항과 연결지어 설명):
         3. 대표 메뉴 및 대략적인 가격:
         4. 한줄 평:
@@ -146,7 +146,7 @@ def recommend_restaurant(location, people, genre, price, notes):
         - 어설픈 모사는 사용자에게 불편함을 야기할 수 있으므로, 자연스럽고 생동감 있게 표현하세요.
     """
     result = rag_chain.invoke(query)
-    print(result)
+    # print(result)
     return result
 
-recommend_restaurant('강남', '디저트', '2', '30000', '비슷한 음식점 추천해줘.')
+# recommend_restaurant('강남', '디저트', '2', '30000', '비슷한 음식점 추천해줘.')

@@ -71,15 +71,15 @@ with st.sidebar:
 if not st.session_state.form_submitted:
     # 현재 선택된 페르소나의 설명 보여주기
     persona_info = PERSONAS[st.session_state.persona]
-    st.markdown(f"### {persona_info['emoji']} {persona_info['name']} 셰프가 맛집을 찾아그려유~")
+    st.markdown(f"### {persona_info['emoji']} {persona_info['name']} 셰프가 맛집을 찾아드립니다.")
     st.caption(f"\"{persona_info['description']}\"")
     
     with st.form("restaurant_form"):
         col1, col2 = st.columns(2)
         
         with col1:
-            location = st.text_input("📍 위치 (예: 제주도, 강남역)", placeholder="어디서 드시나요?")
-            genre = st.text_input("🍕 장르 (예: 흑돼지, 파스타)", placeholder="어떤 음식을 선호하시나요?")
+            location = st.text_input("📍 위치 (예: 강남역)", placeholder="어디서 드시나요?")
+            genre = st.text_input("🍕 음식종류 (예: 흑돼지, 파스타)", placeholder="어떤 음식을 선호하시나요?")
         
         with col2:
             people = st.number_input("👥 인원", min_value=1, max_value=50, value=2, step=1)
